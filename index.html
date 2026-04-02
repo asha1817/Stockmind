@@ -1,40 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>StockMind Lite</title>
+  <title>StockMind Pro</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-
-  <h1>📈 StockMind</h1>
-
-  <div class="nav">
-    <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('learn')">Learn</button>
-    <button onclick="showPage('practice')">Practice</button>
-    <button onclick="showPage('quiz')">Quiz</button>
-  </div>
+<div class="app">
 
   <!-- HOME -->
-  <div id="home" class="page">
+  <div id="home" class="page active">
+    <h2>Dashboard</h2>
+
     <div class="card">
-      <h2>📊 Market</h2>
-      <p id="market"></p>
+      <p class="label">Market Status</p>
+      <h3 id="market"></h3>
+      <small id="reason"></small>
     </div>
 
     <div class="card">
-      <h2>💡 Tip</h2>
+      <p class="label">Portfolio</p>
+      <h2>₹ <span id="balance">10000</span></h2>
+      <p class="pl" id="pl">+0</p>
+    </div>
+
+    <div class="card">
+      <p class="label">Daily Tip</p>
       <p id="tip"></p>
     </div>
+  </div>
+
+  <!-- LEARN -->
+  <div id="learn" class="page">
+    <h2>Learn</h2>
+    <div class="card">Stock = Ownership in a company</div>
+    <div class="card">Trend = Direction of market</div>
+    <div class="card">Stop Loss = Limit your loss</div>
+  </div>
+
+  <!-- TRADE -->
+  <div id="trade" class="page">
+    <h2>Paper Trading</h2>
 
     <div class="card">
-      <h2>🔥 Streak</h2>
-      <p id="streak"></p>
+      <p>Balance: ₹<span id="tradeBalance">10000</span></p>
+      <button onclick="buy()">BUY</button>
+      <button onclick="sell()">SELL</button>
     </div>
   </div>
+
+  <!-- ANALYSIS -->
+  <div id="analysis" class="page">
+    <h2>Analysis</h2>
+    <div class="card">Market is following an uptrend.</div>
+    <div class="card">Support: 22,000</div>
+    <div class="card">Resistance: 23,500</div>
+  </div>
+
+  <!-- NAV -->
+  <div class="nav">
+    <button onclick="show('home')">Home</button>
+    <button onclick="show('learn')">Learn</button>
+    <button onclick="show('trade')">Trade</button>
+    <button onclick="show('analysis')">Data</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>  </div>
 
   <!-- LEARN -->
   <div id="learn" class="page">
